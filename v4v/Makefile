@@ -17,7 +17,9 @@
 #
 
 V4V_VERSION=1.0
-obj-m += v4v.o 
+obj-m += v4v.o
+v4v-objs := main.o
+
 KVERSION := $(shell uname -r)
 
 all:
@@ -40,7 +42,7 @@ modules:
 modules_install:
 	$(MAKE) -C $(KERNELDIR) M=`pwd` modules_install
 clean:
-	$(MAKE) -C $(KERNELDIR) M=`pwd` clean
+	$(MAKE) -C /lib/modules/${KVERSION}/build M=$(PWD) clean
 
 dkms.conf: dkms/dkms.conf.in
 control: dkms/control.in
