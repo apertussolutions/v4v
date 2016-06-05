@@ -32,6 +32,8 @@
  * IN THE SOFTWARE.
  */
 
+#ifndef __V4V_LINUX_H__
+#define __V4V_LINUX_H__
 
 #ifndef XC_KERNEL
 
@@ -71,3 +73,4 @@ HYPERVISOR_v4v_op(int cmd, void *arg1, void *arg2, void *arg3,
 #undef DOMID_INVALID
 #define DOMID_INVALID (0x7FF4U)
 
+#endif
