@@ -71,6 +71,7 @@
 #include "v4v.h"
 #include "hypercall.h"
 #include "ring.h"
+#include "viptables.h"
 #include <xen/evtchn.h>
 #include <xen/v4v.h>
 #include <linux/v4v_dev.h>
@@ -246,26 +247,6 @@ v4v_notify (void)
   DEBUG_APPLE;
 
 }
-
-/***********************  viptables ********************/
-static void
-v4v_viptables_add (struct v4v_private *p, struct v4v_viptables_rule* rule, int position)
-{
-  H_v4v_viptables_add (rule, position);
-}
-
-static void
-v4v_viptables_del (struct v4v_private *p, struct v4v_viptables_rule* rule, int position)
-{
-  H_v4v_viptables_del (rule, position);
-}
-
-static void
-v4v_viptables_list (struct v4v_private *p, struct v4v_viptables_list *rules_list)
-{
-  H_v4v_viptables_list (rules_list);
-}
-
 
 /***********************  state machines ********************/
 static int
