@@ -18,7 +18,7 @@
 
 V4V_VERSION=1.0
 obj-m += v4v.o
-v4v-objs := main.o ring.o
+v4v-objs := main.o ring.o vfs.o
 
 KVERSION := $(shell uname -r)
 
